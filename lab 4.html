@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Buttons Layout Only</title>
+</head>
+<body>
+
+  <div id="root" style="width: 200px; margin: 40px auto; font-family: Arial, sans-serif;">
+
+  </div>
+
+  <script>
+    
+    var root = document.getElementById('root');
+
+    
+    var display = document.createElement('div');
+    display.textContent = '0';
+    display.style.border = '1px solid #444';
+    display.style.padding = '10px';
+    display.style.marginBottom = '6px';
+    display.style.textAlign = 'right';
+    display.style.fontSize = '20px';
+    display.style.minHeight = '30px';
+    root.appendChild(display);
+
+    
+    var grid = document.createElement('div');
+    grid.style.display = 'grid';
+    grid.style.gridTemplateColumns = 'repeat(4, 1fr)';
+    grid.style.gap = '4px';
+
+    
+    function makeButton(label) {
+      var b = document.createElement('button');
+      b.textContent = label;
+      b.style.padding = '12px';
+      b.style.fontSize = '16px';
+      b.style.cursor = 'pointer';
+      b.style.border = '1px solid #666';
+      b.style.borderRadius = '4px';
+      return b;
+    }
+
+    
+    grid.appendChild(makeButton('7'));
+    grid.appendChild(makeButton('8'));
+    grid.appendChild(makeButton('9'));
+    grid.appendChild(makeButton('/'));
+
+    grid.appendChild(makeButton('4'));
+    grid.appendChild(makeButton('5'));
+    grid.appendChild(makeButton('6'));
+    grid.appendChild(makeButton('*'));
+
+    grid.appendChild(makeButton('1'));
+    grid.appendChild(makeButton('2'));
+    grid.appendChild(makeButton('3'));
+    grid.appendChild(makeButton('-'));
+
+    grid.appendChild(makeButton('0'));
+    grid.appendChild(makeButton('.'));
+    grid.appendChild(makeButton('='));
+    grid.appendChild(makeButton('+'));
+
+    root.appendChild(grid);
+
+    
+    var clearRow = document.createElement('div');
+    clearRow.style.marginTop = '6px';
+    var clearBtn = makeButton('C');
+    clearBtn.style.width = '100%';
+    clearRow.appendChild(clearBtn);
+    root.appendChild(clearRow);
+
+    
+    var allButtons = grid.querySelectorAll('button');
+    allButtons.forEach(function(b){
+      b.addEventListener('click', function(){
+        console.log('clicked', b.textContent);
+      });
+    });
+    clearBtn.addEventListener('click', function(){
+      console.log('clicked C');
+    });
+  </script>
+
+</body>
+</html>
