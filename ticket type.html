@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Type</title>
+</head>
+<body>
+
+<h2>Select Ticket Type</h2>
+
+<form onsubmit=" return data()">
+
+<p>There are different ticket types available to suit everyone’s needs. You can choose from Regular, VIP, or Student tickets depending on your budget and preferences. Each ticket type offers a unique experience for the event.
+
+Before selecting your ticket, think about the experience you want to have. If you want premium comfort and extra perks, the VIP option is the best. For a budget-friendly choice, go for Regular or Student tickets. Choose the ticket type that matches your needs and enjoy the event.
+
+Each ticket includes specific benefits so you know what you get: Regular gives standard access, VIP gives extra perks, and Student gives entry plus a meal coupon with valid ID.</p>
+
+<br>
+<br>
+
+        <p>A <strong>Regular</strong>  ticket allows entry to the main event area and access to all standard activities. With this ticket, you can enjoy the performances, visit the stalls, and take part in the open games. It includes one free drink coupon.</p>
+        <p>A<strong> VIP</strong> ticket gives you premium benefits, including front-row seating, access to the VIP lounge, and complimentary snacks and drinks. You will also receive a special gift bag and have the chance to meet the performers after the event.</p>
+        <p>A <strong>Student</strong> ticket is a budget-friendly option for those with a valid student ID. It allows entry to all general activities, and you will also get a free meal coupon that can be used to get snacks or drinks from the food stalls.</p>
+
+
+      
+
+  <fieldset style="padding:10px; border:1px solid #000; max-width:350px;">
+      <legend><strong> Choose one ticket</strong> </legend>
+
+      <div>
+        <input type="radio" name="ticket" id="regular" >
+        <label for="regular">Regular - $50</label>
+      </div>
+
+      <div>
+        <input type="radio" name="ticket" id="vip" >
+        <label for="vip">VIP - $120</label>
+      </div>
+
+      <div>
+        <input type="radio" name="ticket" id="student">
+        <label for="student">Student - $30</label>
+      </div>
+
+      
+    </fieldset>
+
+
+    <br>
+
+
+    <input type="submit" value="Submit">
+
+
+    <script>
+    function data()
+{
+    var regular=document.getElementById("regular").checked;
+    var vip=document.getElementById("vip").checked;
+    var student=document.getElementById("student").checked;
+
+    if(!regular && !vip && !student)
+    {
+        alert("please select ticket catagory!");
+        return false;
+    }
+
+    else
+    {
+        return true;
+    }
+}
+    </script>
+
+</form>
+
+</body>
+</html>
